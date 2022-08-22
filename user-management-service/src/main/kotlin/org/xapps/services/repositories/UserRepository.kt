@@ -10,4 +10,6 @@ class UserRepository : PanacheRepository<User> {
     fun findByUsername(username: String): User? =
         find(User.USERNAME, username).firstResult()
 
+    fun findByIdNotAndUsername(id: Long, username: String): User? =
+        find("#User.findByIdNotAndUsername", id, username).firstResult()
 }

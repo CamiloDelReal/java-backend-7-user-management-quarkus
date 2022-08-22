@@ -1,0 +1,72 @@
+quarkus:
+  http:
+    port: 20000
+  log:
+    level: INFO
+
+  datasource:
+    db-kind: mysql
+    username: root
+    password: root
+    jdbc:
+      url: jdbc:mysql://localhost:3306/users_management
+  hibernate-orm:
+    database:
+      generation: update
+
+  smallrye-jwt:
+    enabled: true
+    add-keys: true
+
+mp:
+  jwt:
+    verify:
+      issuer: https://usersmanagementservice.com/issuer
+      publickey: |
+        -----BEGIN PUBLIC KEY-----
+        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA50kVN98t9qAzIpFGRe8L
+        29EdqXzNKJb7uriLGJqFid/x4QNpfjCLJxWYfABTAkaI7fEwbNzPNYBfL4BqSjV5
+        d/bXL2sL15OndCSpt/2ydnHEYD3cKInxHcJFIBoRqXcHbM05BIT1khv0m9MoE1qy
+        XSunzwbasBwy+Z268CCx2E36GLzHpUgBEZeIcD1lmDXFuLHn1rliOnkK3siIfA1T
+        F7I+FADp9+x6W8A4Cf/OET9XO24EQto4vZuMfKJE35UPF5aUot6E7f/0GzQnsNBt
+        NE3BGCWTpDn7PrFcuIjSU1Cg9ph8NQ8qlNnx45qAgtPsJA1r3lKMIpNQ7BYhOtx0
+        KwIDAQAB
+        -----END PUBLIC KEY-----
+
+smallrye:
+  jwt:
+    sign:
+      key: |
+        -----BEGIN PRIVATE KEY-----
+        MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDnSRU33y32oDMi
+        kUZF7wvb0R2pfM0olvu6uIsYmoWJ3/HhA2l+MIsnFZh8AFMCRojt8TBs3M81gF8v
+        gGpKNXl39tcvawvXk6d0JKm3/bJ2ccRgPdwoifEdwkUgGhGpdwdszTkEhPWSG/Sb
+        0ygTWrJdK6fPBtqwHDL5nbrwILHYTfoYvMelSAERl4hwPWWYNcW4sefWuWI6eQre
+        yIh8DVMXsj4UAOn37HpbwDgJ/84RP1c7bgRC2ji9m4x8okTflQ8XlpSi3oTt//Qb
+        NCew0G00TcEYJZOkOfs+sVy4iNJTUKD2mHw1DyqU2fHjmoCC0+wkDWveUowik1Ds
+        FiE63HQrAgMBAAECggEAIYs+8ZCD2Q4Y/H13ZLMr1CC7HZbFJornTYhwXAwlK/73
+        1Luq9CtUM0H1kJ53a5ARUfk2HcPUpZzNsVT9lW+2A0kgonbzC7wVgEnE97Nqy7Tq
+        V08BfDutZbSEVAiT4TErOYN2LoqeFyfIzUTNvijcT5kCSItk8j/UwNE4iJUlVgqK
+        hwfXAT6i+HY05/e63JfUOatuk1KKW8Uibt+IJgFab1kfKdqRj/xufqRamCDPmdA+
+        Kshaa3OJb0AcZPALteYv2QwtbCEq9h6Ldad/UjQk1o2JfFLilCY+G+mykZnm84bT
+        RkWMXPOIseQLu+2drceWrxd1XhmUFfEs7SDyD3s2MQKBgQD8awWvaZHdMEVnxsUl
+        97ByQBlLHEdg/Whs0yR8Up24GatM7xOuS94aqXZq/9aU/iZLzas8NpvH/3G3BhB7
+        /6phpfTYMVibgUuniWHK7MBo6cJsKHDQj1pgowxVGRFYCv7ukQKQgOiMdbUtsTLs
+        tU/A/9RGoRpeAFkdW+8iyDHzmQKBgQDqkUpx+O1EQE81egXy29YF1hBFET91t1ry
+        j8an9LbU9ee9U1AX+H4iNLrVS5IikY2qd/RcKKH2LPOuRiieucg1uDIxbtc/Yzyz
+        O8xbX5bX3A3gPRM/DdlEhnr5XgGhTBGgzoyOzDR4idU+Jq3iMdXRRie7+Bw+2F6X
+        eh/Z/u1AYwKBgE0kdBdY30BHKV7+62+gFCfGmTRQTyxAJfLkUIlCQntqNOUNR+mD
+        vDxPwCYRTEY6qf+Oup9rXQ6xbdJuowkSaMLxEjQkWJ0l1bY9EUsQMfmeP1IIxfmn
+        ZgqUqgcz4w4SRjkozizViLysmJN/TT30Z4xnYzu2rrU9y/5iA2KQ5ls5AoGAeuXO
+        zHIw1h6foZQiQ8EcnIgwlA9aYXHEy+u6mMslc+S3G0HoZ/bBF2jrLs/ebBA42kTp
+        GdQML7ATqI6Hv8n09PhiC/ZX/pUe+4VsJ7+oh8Z62q8FQ3cdC8Mt8TNoxTrWzZsK
+        l9Kz9ye4O00Gs8mKjpAkR17SZbb1sIXC5HOlmKMCgYBR2Kw9iNv5Of4U6KTFozsp
+        tAalQjnjOZWrL/vC4+PyJ2ccoJrZAN2CvRrbcmxwIi41V4ik2kLdqxQllBneoS4A
+        vaUMXrlWkfl3P/Z4pXe/MA5KETFYXpvr0d5R4LFAn3Z0uiwFKGPAuO+/yr3l5jUZ
+        vIPrexy3kA+zmYvCxoAdwA==
+        -----END PRIVATE KEY-----
+
+security:
+  token:
+    expiration: 3600
+

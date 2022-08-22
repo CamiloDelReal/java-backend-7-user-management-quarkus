@@ -28,7 +28,7 @@ class DatabaseSeeder @Inject constructor(
 
         if (userRepository.count() == 0L) {
             if (adminRole == null) {
-                adminRole = roleRepository.findByValue(Role.ADMINISTRATOR).get()
+                adminRole = roleRepository.findByValue(Role.ADMINISTRATOR)!!
             }
             val admin = User(
                 username = "root",

@@ -9,6 +9,9 @@ import javax.persistence.*
 
 @Entity
 @Table(name = User.TABLE_NAME)
+@NamedQueries(
+    NamedQuery(name = "User.findByIdNotAndUsername", query = "from User where id != ?1 and username = ?2")
+)
 @UserDefinition
 data class User(
     @Id
@@ -20,12 +23,12 @@ data class User(
     @Column(name = USERNAME)
     @JsonProperty(value = USERNAME)
     @Username
-    var username: String = "",
+    var username: String? = "",
 
     @Column(name = PASSWORD)
     @JsonProperty(value = PASSWORD, access = JsonProperty.Access.WRITE_ONLY)
     @Password
-    var password: String = "",
+    var password: String? = "",
 
     @ManyToMany
     @JsonProperty(value = ROLES)
@@ -39,4 +42,5 @@ data class User(
         const val PASSWORD = "password"
         const val ROLES = "roles"
     }
+
 }
