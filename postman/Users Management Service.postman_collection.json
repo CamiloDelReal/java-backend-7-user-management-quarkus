@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "a6f56f55-9c3f-4543-8cbb-df371dd46a94",
+		"name": "Users Management Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"root\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:20000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "20000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1cG4iOiJyb290IiwiaXNzIjoiaHR0cHM6Ly91c2Vyc21hbmFnZW1lbnRzZXJ2aWNlLmNvbS9pc3N1ZXIiLCJncm91cHMiOlsiYWRtaW5pc3RyYXRvciJdLCJzdWIiOiJ7XCJpZFwiOjMsXCJ1c2VybmFtZVwiOlwicm9vdFwiLFwicm9sZXNcIjpbe1wiaWRcIjoxLFwidmFsdWVcIjpcImFkbWluaXN0cmF0b3JcIn1dfSIsImlhdCI6MTY2MTEyNzExNiwiZXhwIjoxNjYxMTMwNzE2LCJqdGkiOiJjZjYyZThjNC1kNzMzLTQ2ZjItOGJlZS0xYjFhMzUwMjY2MjAifQ.stXd4-lslu6udIZdAlgmJM048Mv17UQaqADEfxCtDQSgxnIYw_ffs3Dw6h0MHv0i-51iqfhaqKSftWw1adgob1WTsOV8ErYV2RHE-JLO95iSTTasEnshCwl2KbuxmmfIlLZ4T8xs-ShDiGcDexbnM-iFCTllpFYR66SBkI-pbMxKoZdQaplkZvi9OJ2AJqJZ8Q0fwzzMEIgpW4RhsrBn5oCtbYKz0ue7QNHAC9ZgfDKjTxZbaluiEEhwrAa-rqul9UsPvE0Nak_ssBh9UIACdHpWDl1wo6dDNAGENDOZGWS2ebUdTvlJ3o8hJSEt8Lx4kg9Bpm3xOxpTmcUc4h7Rzw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:20000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "20000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1cG4iOiJyb290IiwiaXNzIjoiaHR0cHM6Ly91c2Vyc21hbmFnZW1lbnRzZXJ2aWNlLmNvbS9pc3N1ZXIiLCJncm91cHMiOlsiYWRtaW5pc3RyYXRvciJdLCJzdWIiOiJ7XCJpZFwiOjMsXCJ1c2VybmFtZVwiOlwicm9vdFwiLFwicm9sZXNcIjpbe1wiaWRcIjoxLFwidmFsdWVcIjpcImFkbWluaXN0cmF0b3JcIn1dfSIsImlhdCI6MTY2MTEyNzExNiwiZXhwIjoxNjYxMTMwNzE2LCJqdGkiOiJjZjYyZThjNC1kNzMzLTQ2ZjItOGJlZS0xYjFhMzUwMjY2MjAifQ.stXd4-lslu6udIZdAlgmJM048Mv17UQaqADEfxCtDQSgxnIYw_ffs3Dw6h0MHv0i-51iqfhaqKSftWw1adgob1WTsOV8ErYV2RHE-JLO95iSTTasEnshCwl2KbuxmmfIlLZ4T8xs-ShDiGcDexbnM-iFCTllpFYR66SBkI-pbMxKoZdQaplkZvi9OJ2AJqJZ8Q0fwzzMEIgpW4RhsrBn5oCtbYKz0ue7QNHAC9ZgfDKjTxZbaluiEEhwrAa-rqul9UsPvE0Nak_ssBh9UIACdHpWDl1wo6dDNAGENDOZGWS2ebUdTvlJ3o8hJSEt8Lx4kg9Bpm3xOxpTmcUc4h7Rzw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:20000/users/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "20000",
+					"path": [
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"jane\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:20000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "20000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1cG4iOiJyb290IiwiaXNzIjoiaHR0cHM6Ly91c2Vyc21hbmFnZW1lbnRzZXJ2aWNlLmNvbS9pc3N1ZXIiLCJncm91cHMiOlsiYWRtaW5pc3RyYXRvciJdLCJzdWIiOiJ7XCJpZFwiOjMsXCJ1c2VybmFtZVwiOlwicm9vdFwiLFwicm9sZXNcIjpbe1wiaWRcIjoxLFwidmFsdWVcIjpcImFkbWluaXN0cmF0b3JcIn1dfSIsImlhdCI6MTY2MTEyNzExNiwiZXhwIjoxNjYxMTMwNzE2LCJqdGkiOiJjZjYyZThjNC1kNzMzLTQ2ZjItOGJlZS0xYjFhMzUwMjY2MjAifQ.stXd4-lslu6udIZdAlgmJM048Mv17UQaqADEfxCtDQSgxnIYw_ffs3Dw6h0MHv0i-51iqfhaqKSftWw1adgob1WTsOV8ErYV2RHE-JLO95iSTTasEnshCwl2KbuxmmfIlLZ4T8xs-ShDiGcDexbnM-iFCTllpFYR66SBkI-pbMxKoZdQaplkZvi9OJ2AJqJZ8Q0fwzzMEIgpW4RhsrBn5oCtbYKz0ue7QNHAC9ZgfDKjTxZbaluiEEhwrAa-rqul9UsPvE0Nak_ssBh9UIACdHpWDl1wo6dDNAGENDOZGWS2ebUdTvlJ3o8hJSEt8Lx4kg9Bpm3xOxpTmcUc4h7Rzw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"jane\",\r\n    \"password\": \"123456\",\r\n    \"roles\": [\r\n        {\r\n            \"id\": 13\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:20000/users/22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "20000",
+					"path": [
+						"users",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1cG4iOiJyb290IiwiaXNzIjoiaHR0cHM6Ly91c2Vyc21hbmFnZW1lbnRzZXJ2aWNlLmNvbS9pc3N1ZXIiLCJncm91cHMiOlsiYWRtaW5pc3RyYXRvciJdLCJzdWIiOiJ7XCJpZFwiOjMsXCJ1c2VybmFtZVwiOlwicm9vdFwiLFwicm9sZXNcIjpbe1wiaWRcIjoxLFwidmFsdWVcIjpcImFkbWluaXN0cmF0b3JcIn1dfSIsImlhdCI6MTY2MTEyNzExNiwiZXhwIjoxNjYxMTMwNzE2LCJqdGkiOiJjZjYyZThjNC1kNzMzLTQ2ZjItOGJlZS0xYjFhMzUwMjY2MjAifQ.stXd4-lslu6udIZdAlgmJM048Mv17UQaqADEfxCtDQSgxnIYw_ffs3Dw6h0MHv0i-51iqfhaqKSftWw1adgob1WTsOV8ErYV2RHE-JLO95iSTTasEnshCwl2KbuxmmfIlLZ4T8xs-ShDiGcDexbnM-iFCTllpFYR66SBkI-pbMxKoZdQaplkZvi9OJ2AJqJZ8Q0fwzzMEIgpW4RhsrBn5oCtbYKz0ue7QNHAC9ZgfDKjTxZbaluiEEhwrAa-rqul9UsPvE0Nak_ssBh9UIACdHpWDl1wo6dDNAGENDOZGWS2ebUdTvlJ3o8hJSEt8Lx4kg9Bpm3xOxpTmcUc4h7Rzw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:20000/users/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "20000",
+					"path": [
+						"users",
+						"20"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
