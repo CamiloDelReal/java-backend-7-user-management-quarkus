@@ -58,6 +58,18 @@ class UserResource @Inject constructor(
             }
         }
 
+    @GET
+    @PermitAll
+    @Path("/roles")
+    fun getAllRoles(): Response =
+            try {
+                Response.ok(userService.findAllRoles()).build()
+            } catch (ex: Exception) {
+                Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                        .entity(ex.localizedMessage)
+                        .build()
+            }
+
 
     @GET
     @RolesAllowed(Role.ADMINISTRATOR)

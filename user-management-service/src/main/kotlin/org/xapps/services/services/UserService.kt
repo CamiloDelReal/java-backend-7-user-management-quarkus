@@ -56,6 +56,9 @@ class UserService @Inject constructor(
     fun findById(id: Long): User? =
             userRepository.findById(id)
 
+    fun findAllRoles(): List<Role> =
+            roleRepository.findAll().list()
+
     @Transactional
     fun create(user: User): User {
         return if(user.username != null && user.password != null) {
@@ -89,6 +92,7 @@ class UserService @Inject constructor(
             if (duplicity) {
                 throw UsernameNotAvailableException()
             } else {
+                persistedUser.roles.toString()
                 user.username?.let { newUsername ->
                     persistedUser.username = newUsername
                 }
