@@ -7,10 +7,8 @@ REST service to manage users with CRUD operations, using Quarkus. This is a simp
 - Quarkus
 - Hibernate and Panache
 - JWT Authentication and Authorization
+- Tests
 - MySQL database
 - Script for generating certificates
 - Postman queries
 - Docker compose script for dependencies
-
-### ToDoS
-- Tests
